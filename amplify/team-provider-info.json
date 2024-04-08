@@ -22,5 +22,29 @@
         }
       }
     }
+  },
+  "sidoinedev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-myyieldapp241-sidoinedev-b2d80-authRole",
+      "UnauthRoleArn": "arn:aws:iam::609170532317:role/amplify-myyieldapp241-sidoinedev-b2d80-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::609170532317:role/amplify-myyieldapp241-sidoinedev-b2d80-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-myyieldapp241-sidoinedev-b2d80-deployment",
+      "UnauthRoleName": "amplify-myyieldapp241-sidoinedev-b2d80-unauthRole",
+      "StackName": "amplify-myyieldapp241-sidoinedev-b2d80",
+      "StackId": "arn:aws:cloudformation:us-east-1:609170532317:stack/amplify-myyieldapp241-sidoinedev-b2d80/e8c62810-f5aa-11ee-9aec-0edf34d8965f",
+      "AmplifyAppId": "d28j0xw1vzmw9y"
+    },
+    "categories": {
+      "api": {
+        "myyieldapp241": {}
+      },
+      "auth": {
+        "myyieldapp241b6efda20": {}
+      },
+      "hosting": {
+        "S3AndCloudFront": {}
+      }
+    }
   }
 }

@@ -11,6 +11,17 @@ projects:
         generatedFileName: src/API.ts
         docsFilePath: src/graphql
         graphQLApiId: 3ymxj2yiwnemhf4b72hy3sdqzu
+  myyieldapp241:
+    schemaPath: src/graphql/schema.json
+    includes:
+      - src/graphql/**/*.ts
+    excludes:
+      - ./amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: typescript
+        generatedFileName: src/API.ts
+        docsFilePath: src/graphql
 extensions:
   amplify:
     version: 3

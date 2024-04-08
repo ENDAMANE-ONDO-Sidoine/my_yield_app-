@@ -1,17 +1,29 @@
-// tslint:disable
+/* tslint:disable */
+/* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getRestaurant = `query GetRestaurant($id: ID!) {
+import * as APITypes from "../API";
+type GeneratedQuery<InputType, OutputType> = string & {
+  __generatedQueryInput: InputType;
+  __generatedQueryOutput: OutputType;
+};
+
+export const getRestaurant = /* GraphQL */ `query GetRestaurant($id: ID!) {
   getRestaurant(id: $id) {
     id
-    clientId
     name
     description
     city
+    createdAt
+    updatedAt
+    __typename
   }
 }
-`;
-export const listRestaurants = `query ListRestaurants(
+` as GeneratedQuery<
+  APITypes.GetRestaurantQueryVariables,
+  APITypes.GetRestaurantQuery
+>;
+export const listRestaurants = /* GraphQL */ `query ListRestaurants(
   $filter: ModelRestaurantFilterInput
   $limit: Int
   $nextToken: String
@@ -19,12 +31,18 @@ export const listRestaurants = `query ListRestaurants(
   listRestaurants(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
-      clientId
       name
       description
       city
+      createdAt
+      updatedAt
+      __typename
     }
     nextToken
+    __typename
   }
 }
-`;
+` as GeneratedQuery<
+  APITypes.ListRestaurantsQueryVariables,
+  APITypes.ListRestaurantsQuery
+>;
