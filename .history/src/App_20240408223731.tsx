@@ -136,7 +136,7 @@ const App: React.FC = () => {
    return (
     <div className="App">
       <Container>
-        <Row className="mt-5">
+        <Row className="mt-3">
           <Col md={4}>
             <Form>
               <Form.Group controlId="formDataName">
@@ -167,7 +167,7 @@ const App: React.FC = () => {
 
         {state.restaurants.length ? (
           <Row className="my-4">
-            <Col className="bg-white t p-0 rounded-4">
+            <Col className="bg-">
               <Table striped bordered hover>
                 <thead>
                   <tr className="text-center">

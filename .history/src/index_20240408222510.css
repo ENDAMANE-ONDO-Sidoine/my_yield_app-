@@ -5,8 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:  rgb(3, 72, 74);
-  
+  background-image: url(https://images.rawpixel.com/image_png_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvdXB3azYyMDY5NTg5LXdpa2ltZWRpYS1pbWFnZS1qb2I2MjNfNC1sMXBxYmwweC5wbmc.png) ;
+  background-size: cover;
+  background-size: center;
 }
 
 code {

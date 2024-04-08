@@ -52,7 +52,6 @@ type SubscriptionEvent<D> = {
 const initialState: AppState = {
   restaurants: [],
   formData: {
-    id: '',
     name: '',
     city: '',
     description: '',
@@ -136,7 +135,7 @@ const App: React.FC = () => {
    return (
     <div className="App">
       <Container>
-        <Row className="mt-5">
+        <Row className="mt-3">
           <Col md={4}>
             <Form>
               <Form.Group controlId="formDataName">
@@ -167,7 +166,7 @@ const App: React.FC = () => {
 
         {state.restaurants.length ? (
           <Row className="my-4">
-            <Col className="bg-white t p-0 rounded-4">
+            <Col>
               <Table striped bordered hover>
                 <thead>
                   <tr className="text-center">
@@ -180,14 +179,14 @@ const App: React.FC = () => {
               </thead>
               <tbody>
                 {state.restaurants.map((restaurant, index) => (
-                  <tr key={`restaurant-${index}`}  className="text-center">
+                  <tr key={`restaurant-${index}`}>
                     <td>{index + 1}</td>
                     <td>{restaurant.name}</td>
                     <td>{restaurant.description}</td>
                     <td>{restaurant.city}</td>
                     <td>
                       <Button onClick={() => deleteRestaurantById(restaurant.id)}> 
-                        Delete Restaurant
+                        Supprimer
                       </Button>
                     </td>
                   </tr>

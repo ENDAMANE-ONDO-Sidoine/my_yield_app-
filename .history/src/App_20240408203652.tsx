@@ -7,7 +7,7 @@ import Amplify from 'aws-amplify';
 
 // Import des fichiers de configuration et des requêtes GraphQL
 import awsConfig from './aws-exports';
-import { createRestaurant, deleteRestaurant } from './graphql/mutations'; // Remarquez le changement ici
+import { createRestaurant, DeleteRestaurant } from './graphql/mutations';
 import { listRestaurants } from './graphql/queries';
 import { onCreateRestaurant } from './graphql/subscriptions';
 
@@ -16,7 +16,6 @@ Amplify.configure(awsConfig);
 
 // Définition des types pour les données de restaurant et l'état de l'application
 type Restaurant = {
-  id: string;
   name: string;
   description: string;
   city: string;
@@ -52,7 +51,6 @@ type SubscriptionEvent<D> = {
 const initialState: AppState = {
   restaurants: [],
   formData: {
-    id: '',
     name: '',
     city: '',
     description: '',
@@ -122,21 +120,13 @@ const App: React.FC = () => {
   const handleChange = (e: any) =>
     dispatch({ type: 'SET_FORM_DATA', payload: { [e.target.name]: e.target.value } });
 
-  // Fonction pour supprimer un restaurant
-  const deleteRestaurantById = async (id: string) => { // Remarquez le changement ici
-    try {
-      await API.graphql(graphqlOperation(deleteRestaurant, { input: { id } })); // Remarquez le changement ici
-    } catch (error) {
-      console.error('Erreur lors de la suppression du restaurant :', error);
-      // Afficher un message d'erreur à l'utilisateur
-    }
-  };
+  
 
    // Rendu du composant
    return (
     <div className="App">
       <Container>
-        <Row className="mt-5">
+        <Row className="mt-3">
           <Col md={4}>
             <Form>
               <Form.Group controlId="formDataName">
@@ -167,7 +157,7 @@ const App: React.FC = () => {
 
         {state.restaurants.length ? (
           <Row className="my-4">
-            <Col className="bg-white t p-0 rounded-4">
+            <Col>
               <Table striped bordered hover>
                 <thead>
                   <tr className="text-center">
@@ -180,14 +170,14 @@ const App: React.FC = () => {
               </thead>
               <tbody>
                 {state.restaurants.map((restaurant, index) => (
-                  <tr key={`restaurant-${index}`}  className="text-center">
+                  <tr key={`restaurant-${index}`}>
                     <td>{index + 1}</td>
                     <td>{restaurant.name}</td>
                     <td>{restaurant.description}</td>
                     <td>{restaurant.city}</td>
                     <td>
-                      <Button onClick={() => deleteRestaurantById(restaurant.id)}> 
-                        Delete Restaurant
+                      <Button onClick={() => DeleteRestaurantById(restaurant.id)}>
+                        Supprimer
                       </Button>
                     </td>
                   </tr>
